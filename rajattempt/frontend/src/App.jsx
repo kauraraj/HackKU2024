@@ -42,7 +42,7 @@ function App() {
 
   return (
     <main>
-      <h1>FullStack Chat AI Tutorial</h1>
+      <h1>Friend</h1>
 
       <section>
         {chats && chats.length
@@ -69,7 +69,7 @@ function App() {
           type="text"
           name="message"
           value={message}
-          placeholder="Type a message here and hit Enter..."
+          placeholder="Enter a diary entry"
           onChange={(e) => setMessage(e.target.value)}
         />
       </form>
