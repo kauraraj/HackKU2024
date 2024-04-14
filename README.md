@@ -6,7 +6,7 @@ A personal diary that can go from being the best you've ever had hype man to you
 
 ## Installation
 
-Use the Node Package Manager (npm) to install the dependencies.
+Use the Node Package Manager (npm) to install all dependencies.
 
 ```bash
 npm install express cors body-parser openai morgan dotenv axios --save
@@ -14,18 +14,7 @@ npm install express cors body-parser openai morgan dotenv axios --save
 
 ## Usage
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+Type diary responses into the web application and then interact with the positive, kind, therapeutic, friendly AI bot. When you can't afford therapy, they're there to give you therAIpy.
 
 ## Contributing
 
@@ -37,5 +26,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[I don't know if we have a license tbh.]
 [MIT](https://choosealicense.com/licenses/mit/)
