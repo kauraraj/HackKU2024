@@ -3,6 +3,7 @@ import './NavigationBar.css';
 
 // NavigationBar.js
 
+// This is a functional component called NavigationBar
 const NavigationBar = () => {
     return (
         <div className="navbar">
@@ -12,4 +13,5 @@ const NavigationBar = () => {
     );
 };
 
+// Export the NavigationBar component as the default export
 export default NavigationBar;
