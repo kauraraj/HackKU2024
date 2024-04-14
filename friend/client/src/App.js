@@ -1,32 +1,29 @@
 import "./App.css";
 import React, { useState, useRef, useEffect } from "react";
-
-// Your component code goes here
 import ChatMessage from "./components/ChatMessage";
-import { GetEngines, ShowErrorDialog } from "./utils/Utils";
+import { ShowErrorDialog } from "./utils/Utils";
 import Thinking from "./components/Thinking";
+import NavigationBar from './components/NavigationBar';
 
+// Importing necessary modules and components
 
-
+// Define the main App component
 function App() {
-
-
-  // add state for input and chat log
+  // State variables
   const [input, setInput] = useState("");
-  const [models, setModels] = useState([]);
-  const [currentModel, setCurrentModel] = useState("gpt-3.5-turbo");
-  const inputRef = useRef();
-  const messagesEndRef = useRef();
   const [thinking, setThinking] = useState(false);
 
-  /**
- * Scrolls the chat area to the bottom.
- */
+  // References
+  const currentModel = "gpt-3.5-turbo";
+  const inputRef = useRef();
+  const messagesEndRef = useRef();
+
+  // Function to scroll to the bottom of the chat log
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-
+  // Initialize the chat log with a default message
   const [chatLog, setChatLog] = useState([
     {
       user: "gpt",
@@ -34,8 +31,7 @@ function App() {
     },
   ]);
 
-
-  // clear chats
+  // Function to clear the chat log
   function clearChat() {
     fetch("http://localhost:3010/clear")
       .then((res) => {
@@ -53,7 +49,7 @@ function App() {
       });
   }
 
-
+  // Function to handle form submission
   async function handleSubmit(e) {
     e.preventDefault();
     let chatLogNew = [...chatLog, { user: "me", message: `${input}` }];
@@ -81,7 +77,7 @@ function App() {
 
       setThinking(false);
 
-      //append
+      // Append the response message to the chat log
       setChatLog([
         ...chatLogNew,
         { user: "gpt", message: `${data.message.content}` },
@@ -92,27 +88,17 @@ function App() {
     }
   }
 
-
-  /**
- * Scrolls the chat area to the bottom when the messages array is updated.
- */
+  // Scroll to the bottom of the chat log whenever it changes
   useEffect(() => {
     scrollToBottom();
   }, [chatLog]);
 
-  /**
- * Focuses the TextArea input to when the component is first rendered.
- */
+  // Set focus on the input field when the component mounts
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
-  // use effect run once when app loads
-  useEffect(() => {
-    GetEngines(setModels);
-  }, []);
-
-
+  // Render the App component
   return (
     <div className="App">
       <aside className="sidemenu">
@@ -120,36 +106,22 @@ function App() {
           <span>+</span>
           New Chat
         </div>
-        <div className="models">
-          <select
-            onChange={(e) => {
-              setCurrentModel(e.target.value);
-            }}
-            style={{ width: "200px" }} // Set a fixed width for the select element
-          >
-            <option value="">Models</option>
-            {models.map((model, index) => (
-              <option key={index} value={model.id}>
-                {model.id}
-              </option>
-            ))}
-          </select>
-        </div>
       </aside>
+      <NavigationBar />
       <section className="chatbox">
         <div className="chat-log">
-
+          {/* Render each chat message */}
           {chatLog.map((message, index) => (
             <ChatMessage key={index} message={message} />
           ))}
 
+          {/* Render the thinking indicator if necessary */}
           {thinking && <Thinking />}
           <span ref={messagesEndRef}></span>
-
         </div>
         <div className="chat-input-holder">
           <form onSubmit={handleSubmit}>
-            <input
+            <input placeholder="Enter your diary prompt here..."
               ref={inputRef}
               rows="1"
               value={input}
@@ -163,4 +135,5 @@ function App() {
   );
 }
 
+// Export the App component as the default export
 export default App;

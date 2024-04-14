@@ -1,13 +1,12 @@
 [How to make a readme](https://www.makeareadme.com/)
 
-# [Name of Project]
+# TherapAI
 
-[Brief Description of project]
+A personal diary that can go from being the best you've ever had hype man to your unofficial therapist that's there for you no matter what.
 
 ## Installation
 
-[Instructions for installation
-Use the [package manager] to install [project].
+Use the Node Package Manager (npm) to install the dependencies.
 
 ```bash
 npm install express cors body-parser openai morgan dotenv axios --save

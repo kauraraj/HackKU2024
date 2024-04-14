@@ -1,10 +1,10 @@
 .App {
   text-align: center;
   display: flex;
-  background-color: #282c34;
+  background-color: #8d6694;
   color: white;
   position: absolute;
-  top: 0;
+  top: 45px;
   bottom: 0;
   right: 0;
   left: 0;
@@ -12,41 +12,25 @@
 
 .sidemenu {
   width: 240px;
-  background-color: #202123;
+  background-color: #9c75a4;
   padding: 10px;
 }
 
 .sidemenu-button {
   padding: 12px;
-  border: 1px solid white;
+  border: .7px solid #FFF8FE;
   border-radius: 5px;
   text-align: left;
   transition: ease 0.25s all;
 }
 
 .sidemenu-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #c18ebecc;
 }
 
 .sidemenu-button span {
   padding-left: 6px;
   padding-right: 2px;
-}
-
-.models {
-  margin-top: 20px;
-}
-.models select {
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  outline: none;
-  min-width: 1px; /* Set the desired minimal width value */
-}
-
-.models select:focus {
-  border-color: #888;
 }
 
 .App-logo {
@@ -87,10 +71,10 @@
 
 .chatbox {
   flex: 1;
-  background-color: #b1b1b1;
+  background-color: #FFE1F5;
   position: relative;
   overflow-y: auto;
-  padding-bottom: 80px; /* Add padding to the bottom to accommodate the chat input holder */
+  padding-bottom: 75px; /* Add padding to the bottom to accommodate the chat input holder */
   max-height: calc(100vh - 140px); /* Adjust the value based on your layout */
 }
 
@@ -103,10 +87,10 @@
 }
 
 .chat-input-textarea {
-  background-color: #40414f;
+  background-color: #b082b9;
   width: 90%;
   padding: 12px;
-  color: white;
+  color: #FFF8FE;
   font-size: 1.25em;
   border-radius: 5px;
   border-color: none;
@@ -114,6 +98,9 @@
   margin: 12px;
   outline: none;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+}
+::placeholder {
+  color: #FFF8FE;
 }
 
 .chat-log {
@@ -130,15 +117,15 @@
 }
 
 .chat-message.chatgpt {
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #fdefff;
+  color: #a178a9;
   border-radius: 5px;
   margin-bottom: 10px;
 }
 
 .chat-message.user {
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #fef5fd;
+  color: #b082b9;
   border-radius: 5px;
   margin-bottom: 10px;
 }

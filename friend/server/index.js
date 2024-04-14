@@ -4,8 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const configuration = new Configuration({apiKey: // API Key
-});
+const configuration = new Configuration({apiKey: ""
+});``
 
 const openai = new OpenAIApi(configuration);
 
@@ -17,7 +17,7 @@ const port = 3010;
 
 const instruction = {
     role: "system",
-    content: "You are ChatGPT, a large language model trained by OpenAI. Carefully heed the user's instructions. Respond using Markdown."
+    content: "Make it personal greeting the person, Tuan, and treat every response like a diary entry and you are the person's therapist and friend who is always there to listen."
 };
 
 let chatHistory = [instruction]; // Store the chat history
@@ -33,7 +33,7 @@ app.post("/", async (req, res) => {
         chatHistory.push({role: "user", content: message});
 
         const response = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo", 
+            model: currentModel, 
             messages: chatHistory, 
             max_tokens: 100, 
             temperature: 0.5
@@ -43,18 +43,6 @@ app.post("/", async (req, res) => {
         chatHistory.push(response.data.choices[0].message);
 
         res.json({message: response.data.choices[0].message});
-    } catch (error) {
-        console.error("Error:", error.message);
-        res.status(500).json({error: `An error occurred ${error}.`});
-    }
-});
-
-app.get("/models", async (req, res) => {
-    try {
-        const response = await openai.listModels();
-        const filteredModels = response.data.data.filter(model => model.id.includes("gpt"));
-
-        res.json({data: filteredModels});
     } catch (error) {
         console.error("Error:", error.message);
         res.status(500).json({error: `An error occurred ${error}.`});

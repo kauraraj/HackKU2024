@@ -1,0 +1,27 @@
+/* NavigationBar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8d6694; /* Background color of the navigation bar */
+    padding: 10px;
+    display: flex;
+    z-index: 999; /* Ensure the navigation bar stays on top of other content */
+}
+
+.nav-button {
+    background-color: #FFE1F5; /* Background color of the buttons */
+    border: none;
+    width: 10%;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #8d6694;
+    transition: ease 0.25s all; 
+}
+
+.nav-button:hover {
+    background-color: #ffc0f6cc;
+}

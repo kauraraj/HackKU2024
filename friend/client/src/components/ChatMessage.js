@@ -8,7 +8,7 @@ const ChatMessage = ({ message }) => {
     <div className={`chat-message ${isGptUser ? "chatgpt" : "user"}`}>
       <div className="chat-message-center">
         <div className={`avatar ${isGptUser ? "chatgpt" : "user"}`}>
-       < Avatar isGptUser={isGptUser}/>
+        <Avatar isGptUser={isGptUser}/>
         </div>
         <div className="message"> {message.message}</div>
       </div>

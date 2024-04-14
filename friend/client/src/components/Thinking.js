@@ -1,6 +1,6 @@
 const Thinking = () => {
     return (<div>
-        thinking...
+        Coming up with my response for you...
     </div>)
 }
 
