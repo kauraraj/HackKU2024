@@ -1,4 +1,4 @@
-# TherapAI
+# $${\color{purple}TherapAI}$$
 
 A personal diary that can go from being the best you've ever had hype man to your unofficial therapist that's there for you no matter what.
 
