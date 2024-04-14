@@ -1,4 +1,5 @@
 [How to make a readme](https://www.makeareadme.com/)
+
 # [Name of Project]
 
 [Brief Description of project]
@@ -9,7 +10,7 @@
 Use the [package manager] to install [project].
 
 ```bash
-pip install foobar
+npm install express cors body-parser openai morgan dotenv axios --save
 ```
 
 ## Usage
