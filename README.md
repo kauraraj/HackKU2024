@@ -2,11 +2,26 @@
 
 A personal diary that can go from being the best you've ever had hype man to your unofficial therapist that's there for you no matter what.
 
+## How to Run
+
+1. Use this line to clone the repository to your local machine
+```bash
+git clone https://github.com/kauraraj/HackKU2024.git
+```
+2. Install it through the Installation Guide below.
+3. Get an OpenAI API key and put it into where the open string is in ./server/index.js
+
+
 ## Installation
 
 Use the Node Package Manager (npm) to install all dependencies.
 
 ```bash
+cd client
+cd ..
+npm install express cors body-parser openai morgan dotenv axios --save
+cd server
+cd ..
 npm install express cors body-parser openai morgan dotenv axios --save
 ```
 
