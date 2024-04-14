@@ -10,6 +10,14 @@ git clone https://github.com/kauraraj/HackKU2024.git
 ```
 2. Install it through the Installation Guide below.
 3. Get an OpenAI API key and put it into where the open string is in ./server/index.js
+4. Terminal 1: ```bash
+cd ..
+make servers
+```
+5. Terminal 2: ```bash
+cd ..
+make clients
+```
 
 
 ## Installation
