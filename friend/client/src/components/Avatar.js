@@ -1,6 +1,8 @@
+// This component is called Avatar and it takes a prop called isGptUser
 const Avatar = ({ isGptUser }) => {
   return (
     <div>
+      {/* This is an SVG element */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={41}
@@ -9,6 +11,7 @@ const Avatar = ({ isGptUser }) => {
         strokeWidth={1.5}
         className="h-6 w-6"
       >
+        {/* If isGptUser is true, render the first path */}
         {isGptUser ? (
           <path
             fill="currentColor"
@@ -16,6 +19,7 @@ const Avatar = ({ isGptUser }) => {
           />
 
         ) : (
+          /* If isGptUser is false, render the second path */
           <path
             fill="currentColor"
             d="M6.462 0H31.538C34.34 0 36.692 2.352 36.692 5.154v31.692C36.692 39.648 34.34 42 31.538 42H6.462C3.66 42 1.308 39.648 1.308 36.846V5.154C1.308 2.352 3.66 0 6.462 0zm0 4.846c-.85 0-1.538.688-1.538 1.538v2.308c0 .85.688 1.538 1.538 1.538h25.077c.85 0 1.538-.688 1.538-1.538V6.385c0-.85-.688-1.538-1.538-1.538H6.462zm0 32.308c-.85 0-1.538-.688-1.538-1.538V8.615c0-.85.688-1.538 1.538-1.538h25.077c.85 0 1.538.688 1.538 1.538v27.692c0 .85-.688 1.538-1.538 1.538H6.462z"
